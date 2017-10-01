@@ -6,13 +6,114 @@
     <link rel="shortcut icon" href="https://img00.deviantart.net/ba42/i/2016/175/e/8/simple_tiger_logo_or_icon_by_shuu1n-da7h36z.png">
     <link rel="stylesheet" type="text/css" href="https://0z11.github.io/index/style.css">
 	  <style>
-		  #slideshow, img.bgM {
+body {
+	background-color: rgb(38,60,74);
+	background-image: url('images/background-v1.0.png');
+	background-position: 50% 0%;
+	background-repeat: no-repeat;
+	font-family: calibri, Arial, sans-serif;
+}
+body:before {
+	content: "";
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+	  -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+				 box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+
+	z-index: 100;
+}
+a img {
+	border: none !important;
+}
+#slideshow, img.bgM {
 	min-width: 1024px;
 	width: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index:-9999;
+}
+a {
+   outline: 0;
+}
+.wrap {
+	width: 920px;
+	padding: 20px;
+	margin: 100px auto;
+	background: rgba(255,255,255,.75);
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.5);
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	color: #000;
+	text-shadow: none;
+}
+.sec {
+	width: 30%;
+	padding: 0% 1.5%;
+	float: left;
+	transition: all 0.3s ease 0s;
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+}
+.invisible {
+	z-index: -100;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255,255,255,0);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.wrap:hover {
+	background-color: rgba(255,255,255,0);
+}
+.wrap:hover .invisible {
+	background-color: rgba(255,255,255,0.75);
+}
+.sec:hover {
+	z-index: 200;
+}
+.sec img {
+	display: block;
+	margin: auto;
+}
+.wrap p {
+	text-align: left;
+}
+.paradigm img {
+	margin-top: 10px;
+	margin-bottom: 37px;
+}
+.wrap h1 {
+	text-shadow: 0px 0px 4px rgb(255,255,255);
+	line-height: 1.7;
+	border-bottom: 1px dotted #000;
+	display: inline-block;
+}
+.wrap p {
+	
+}
+.footer {
+	clear: both;
+	text-align: center;
+	padding-top: 20px;
+}
+#spinner {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('images/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }
 	  </style>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -27,14 +128,53 @@ $(window).load(function() {
   <span class="icon"></span>
 </div>
 <div id="slideshow">
-<img src="https://images3.alphacoders.com/667/66787.jpg" class="bgM"/>
-<img src="https://images4.alphacoders.com/378/37874.jpg" class="bgM"/>
+<img src="images/b1.jpg" class="bgM"/>
+<img src="images/b2.jpg" class="bgM"/>
 <img src="images/b3.jpg" class="bgM"/>
 <img src="images/b4.jpg" class="bgM"/>
 <img src="images/b5.jpg" class="bgM"/>
 <img src="images/b6.jpg" class="bgM"/>
 </div>
-  <br><br><br><br><br><br><br><br><br>
-  <center><h1>COMING SOON</h1></center>
+<div class="wrap">
+	<div class="invisible"></div>
+	<div class="emc sec">
+		<h1>Secondary</h1>
+	
+		<a href=""><img src="images/emc.png" /></a>
+		
+		<p>EMC Publishing develops and produces K-12 solutions in World Languages, Computer Applications, Language Arts, and Social Studies. The brand is a recognized leader in World Language in classrooms throughout the nation.</p>
+	</div>	
+	<div class="paradigm sec">
+		<h1>Post-Secondary</h1>
+	
+		<a href=""><img src="images/paradigm.png" /></a>
+		
+		<p>Paradigm Publishing specializes in post-secondary publishing, offering instructor-led programs in computer technology, health careers, biotechnology, accounting, business and career management.</p>
+	</div>
+	<div class="jist sec">
+		<h1>Career Skills</h1>
+	
+		<a href=""><img src="images/jist.png" /></a>
+		
+		<p>JIST Publishing is renowned as America’s Career Publisher. For more than 30 years, JIST products have helped millions of people plan their education and career, find jobs and succeed in the world of work.</p>
+	</div>
+	<div class="footer">
+		Divisions of
+	</div>
+	<a href=""><img src="images/nml.png" alt="New Mountain Learning" /></a>
+</div>
+
+
+<script>
+$(document).ready(function() {
+	$('#slideshow').cycle({
+		fx: 'fade',
+		pager: '#smallnav', 
+		pause:   1, 
+		speed: 1800,
+		timeout:  3500 
+	});			
+});
+</script>
 </body>
 </html>
